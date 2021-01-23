@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacityComponent } from 'react-native';
+import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
 
@@ -110,3 +110,4 @@ const styles = StyleSheet.create({
 })
 
 export { styles }
+

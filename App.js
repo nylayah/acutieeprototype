@@ -9,6 +9,7 @@ import MeetAcutiee from './App/screens/MeetAcutiee';
 import HomeScreen from './App/screens/HomeScreen';
 import ChatScreen from  './App/screens/Chat';
 import Settings from './App/screens/Settings';
+import EditAvatar from './App/screens/EditAvatar';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Edit Avatar" component={EditAvatar} />
     </Stack.Navigator>
   </NavigationContainer>);
 }

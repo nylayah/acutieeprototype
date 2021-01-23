@@ -1,6 +1,32 @@
-import React from 'react';
-import {ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity, ScrollView} from 'react-native';
+import React, {useRef, useEffect,} from 'react';
+import {ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity, ScrollView,Animated} from 'react-native';
 import {styles} from '../Styles';
+
+
+const FadeInView = (props) => {
+    const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+  
+    useEffect(() => {
+      Animated.timing(
+        fadeAnim,
+        {
+          toValue: 1,
+          duration: 2000,
+        }
+      ).start();
+    }, [fadeAnim])
+  
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {props.children}
+      </Animated.View>
+    );
+  }
 
 
 function AcutieeIntro1 (props)
@@ -48,18 +74,18 @@ function MeetAcutiee1 ({navigation})
                 scrollEventThrottle={200}
                 decelerationRate="fast"
                 pagingEnabled>
-                    <SafeAreaView style={styles.basicContainerRed}>
+                    <View style={styles.basicContainerRed}>
                         <Text style={styles.whiteText}>Meet Acutiee...</Text>
-                    </SafeAreaView>
-                    <SafeAreaView style={styles.basicContainerRed}>
+                    </View>
+                    <View style={styles.basicContainerRed}>
                         <Text style={styles.whiteText}>Your motivator, guide, support system but most importantly a friend</Text>
-                    </SafeAreaView>
-                    <SafeAreaView style={styles.basicContainerRed}>
+                    </View>
+                    <View style={styles.basicContainerRed}>
                         <Text style={styles.whiteText}>Acutiee works with you to help you ACHIEVE and MAINTAIN your goals</Text>
                         <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Chat')}>
                             <Text style={styles.redText}>Get Started!</Text>
                         </TouchableOpacity>
-                    </SafeAreaView>
+                    </View>
                 </ScrollView>
         </SafeAreaView>
 
