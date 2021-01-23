@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import WelcomeScreen from './App/screens/WelcomeScreen';
+import LoginScreen from './App/screens/LoginScreen';
+import CreateAccountScreen from './App/screens/CreateAccountScreen';
+import MeetAcutiee from './App/screens/MeetAcutiee';
+
+const Stack = createStackNavigator();
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return(
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Welcome" headerMode="false">
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Create Account" component={CreateAccountScreen} />
+        <Stack.Screen name="Meet Acutiee" component={MeetAcutiee} />
+    </Stack.Navigator>
+  </NavigationContainer>);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
