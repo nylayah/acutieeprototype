@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:"#e63a46",
         alignItems: "center",
-        padding:10,
+        padding:25,
     },
     logo: {
         width: 200,
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     whiteText: {
         fontSize: 25,
         color: "white",
+        textAlign:"center",
 
     },
     redText: {
@@ -89,6 +90,21 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingLeft: 12,
         marginTop: 10,
+    },
+    sendMessage:{
+        width: "85%",
+        backgroundColor: "#eeeeeeff",
+        borderRadius: 20,
+        height: 45,
+        fontSize: 18,
+        paddingLeft: 12,
+        marginTop: 10,
+        left:-15,
+    },
+    chatContainer:{
+        backgroundColor:"#1d3557",
+        alignItems:"center",
+        flex: -1,
     },
 
 })

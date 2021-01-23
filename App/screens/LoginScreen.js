@@ -18,9 +18,9 @@ function LoginScreen({navigation})
             <Text style={styles.redText}>Let's pick up where you left off...</Text>
             <TextInput style={styles.textInputArea} placeholder={"username or email"}/>
             <TextInput style={styles.textInputArea} placeholder={"password"}/>
-            <TouchableOpacity style={styles.redButton}>
-            <Text style={styles.whiteText}>Login</Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate('Chat')}>
+                <Text style={styles.whiteText}>Login</Text>
+            </TouchableOpacity>
 
         </SafeAreaView>);
     

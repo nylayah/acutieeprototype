@@ -23,12 +23,15 @@ function AcutieeIntro2 (props)
     );
     
 }
-function AcutieeIntro3 (props)
+function AcutieeIntro3 ({navigation})
 {
     return(
 
     <SafeAreaView style={styles.basicContainerRed}>
         <Text style={styles.whiteText}>Acutiee works with you to help you ACHIEVE and MAINTAIN your goals</Text>
+        <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Chat')}>
+            <Text style={styles.redText}>Get Started!</Text>
+        </TouchableOpacity>
     </SafeAreaView>
     );
     
@@ -37,7 +40,7 @@ function MeetAcutiee1 ({navigation})
 {
     return(
         <SafeAreaView style={styles.basicContainerRed}>
-                <Image source ={require("../assets/avataaars.png")} style={styles.logo}/>
+                <Image source ={require("../assets/avataaars.png")} style={{width:300,height:300,marginTop:60, marginBottom:100,}}/>
                 <ScrollView 
                 horizontal={true}
                 contentContainerStyle={{ width: `${100 * 3}%` }}
@@ -45,25 +48,20 @@ function MeetAcutiee1 ({navigation})
                 scrollEventThrottle={200}
                 decelerationRate="fast"
                 pagingEnabled>
-                <AcutieeIntro1></AcutieeIntro1>
-                <AcutieeIntro2></AcutieeIntro2>
-                <AcutieeIntro3></AcutieeIntro3>
+                    <SafeAreaView style={styles.basicContainerRed}>
+                        <Text style={styles.whiteText}>Meet Acutiee...</Text>
+                    </SafeAreaView>
+                    <SafeAreaView style={styles.basicContainerRed}>
+                        <Text style={styles.whiteText}>Your motivator, guide, support system but most importantly a friend</Text>
+                    </SafeAreaView>
+                    <SafeAreaView style={styles.basicContainerRed}>
+                        <Text style={styles.whiteText}>Acutiee works with you to help you ACHIEVE and MAINTAIN your goals</Text>
+                        <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Chat')}>
+                            <Text style={styles.redText}>Get Started!</Text>
+                        </TouchableOpacity>
+                    </SafeAreaView>
                 </ScrollView>
-
-            
-
-
-
-
-
         </SafeAreaView>
-
-
-
-
-
-
-
 
     );
 
