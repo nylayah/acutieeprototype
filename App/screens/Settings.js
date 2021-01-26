@@ -1,23 +1,26 @@
 import React from 'react';
-import {ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity} from 'react-native';
-import {styles} from '../Styles';
+import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity } from 'react-native';
+import { styles } from '../Styles';
+import { Ionicons } from "@expo/vector-icons";
 
 
 
-function Settings (props)
-{
-    return(
+function Settings(props) {
+    return (
         <SafeAreaView style={styles.basicContainer}>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
+                <Ionicons name="arrow-back" size={24} color="red" />
+            </TouchableOpacity>
 
-        <Text>this is settings page</Text>
-
-
-
-
-
+            <Text>this is settings page</Text>
 
 
-            
+
+
+
+
+
+
         </SafeAreaView>
     );
 
