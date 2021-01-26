@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 
 
-function Settings(props) {
+function Settings({ navigation }) {
     return (
         <SafeAreaView style={styles.basicContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
