@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, } from 'react-native';
+import { endAsyncEvent } from 'react-native/Libraries/Performance/Systrace';
 import colors from "./colors";
 
 
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         flex: -1,
     },
     copyright: {
-        fontSize: 12,
+        fontSize: 14,
         color: colors.primary,
         margin: 5,
         bottom: 0,
@@ -83,6 +84,8 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: colors.primary,
         textAlign: "center",
+        marginTop: 10,
+        marginBottom: 10,
     },
     sendMessage: {
         width: "85%",
@@ -98,11 +101,11 @@ const styles = StyleSheet.create({
         width: "95%",
         backgroundColor: colors.secondary,
         borderRadius: 18,
-        color: colors.dark,
+        color: colors.medium,
         height: 50,
         fontSize: 20,
-        paddingLeft: 12,
-        marginTop: 10,
+        paddingLeft: '2.5%',
+        marginTop: 20,
     },
     whiteText: {
         fontSize: 25,
