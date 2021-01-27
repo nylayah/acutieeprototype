@@ -22,7 +22,7 @@ function SignUpScreen({ navigation }) {
             <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate("Meet Acutiee")}>
                 <Text style={styles.whiteText}>Create Account</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Meet Acutiee")}>
+            <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Login")}>
                 <Text style={styles.copyright}>Login</Text>
             </TouchableOpacity>
 
