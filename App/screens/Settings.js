@@ -9,7 +9,7 @@ function Settings({ navigation }) {
     return (
         <SafeAreaView style={styles.basicContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
-                <Ionicons name="arrow-back" size={24} color="red" />
+                <Ionicons name="arrow-back" />
             </TouchableOpacity>
 
             <Text>this is settings page</Text>

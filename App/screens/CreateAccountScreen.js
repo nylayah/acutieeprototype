@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { styles } from '../Config/Styles';
+import { colors, styles } from '../Config/Styles';
 
 
 
@@ -11,7 +11,7 @@ function SignUpScreen({ navigation }) {
     return (
         <SafeAreaView style={styles.basicContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
-                <Ionicons name="arrow-back" size={24} color="red" />
+                <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
             </TouchableOpacity>
             <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, justifyContent: "flex-start", padding: 40, margin: 40, }} />
             <Text style={styles.redText}>Let's get started...</Text>

@@ -1,10 +1,15 @@
 import React from 'react';
 import { StyleSheet, } from 'react-native';
+import colors from "./colors";
 
+
+export default {
+    colors,
+}
 const styles = StyleSheet.create({
     backButton: {
-        width: 50,
         height: 50,
+        width: 50,
         position: "absolute",
         top: 40,
         justifyContent: "flex-start",
@@ -13,38 +18,38 @@ const styles = StyleSheet.create({
     },
     basicContainer: {
         flex: 1,
-        backgroundColor: "#a8dbdcff",
+        backgroundColor: colors.light,
         alignItems: "center",
         padding: 10,
 
     },
     basicContainerRed: {
         flex: 1,
-        backgroundColor: "#e63a46",
+        backgroundColor: colors.primary,
         alignItems: "center",
         padding: 25,
     },
     chatContainer: {
-        backgroundColor: "#1d3557",
+        backgroundColor: colors.dark,
         alignItems: "center",
         flex: -1,
     },
     copyright: {
         fontSize: 12,
-        color: "#eeeeeeff",
+        color: colors.primary,
         margin: 5,
         bottom: 0,
         textAlign: "center",
     },
     grayText: {
         fontSize: 18,
-        color: "gray",
+        color: colors.secondary,
         textAlign: "center",
     },
     grayButton: {
         width: "90%",
         height: 60,
-        backgroundColor: "#eeeeeeff",
+        backgroundColor: colors.secondary,
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 30,
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
     },
     slogan: {
         fontSize: 27,
-        color: "#e63a46",
+        color: colors.primary,
         marginTop: 50,
         marginBottom: 200,
         fontWeight: "bold",
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
     redButton: {
         width: "90%",
         height: 60,
-        backgroundColor: "#e63a46",
+        backgroundColor: colors.primary,
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 30,
@@ -75,12 +80,12 @@ const styles = StyleSheet.create({
     },
     redText: {
         fontSize: 25,
-        color: "#e63a46",
+        color: colors.primary,
         textAlign: "center",
     },
     sendMessage: {
         width: "85%",
-        backgroundColor: "#eeeeeeff",
+        backgroundColor: colors.secondary,
         borderRadius: 20,
         height: 45,
         fontSize: 18,
@@ -90,8 +95,9 @@ const styles = StyleSheet.create({
     },
     textInputArea: {
         width: "95%",
-        backgroundColor: "#eeeeeeff",
+        backgroundColor: colors.secondary,
         borderRadius: 18,
+        color: colors.dark,
         height: 50,
         fontSize: 20,
         paddingLeft: 12,
@@ -99,11 +105,11 @@ const styles = StyleSheet.create({
     },
     whiteText: {
         fontSize: 25,
-        color: "white",
+        color: colors.secondary,
         textAlign: "center",
 
     },
 })
 
-export { styles }
+export { styles, colors }
 
