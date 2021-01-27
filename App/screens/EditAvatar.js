@@ -8,7 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 function EditAvatar({ navigation }) {
     return (
         <SafeAreaView style={styles.basicContainer}>
-            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
                 <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
             </TouchableOpacity>
 
