@@ -8,7 +8,7 @@ function WelcomeScreen({ navigation }) {
     console.log("App executed");
     return (
         <SafeAreaView style={styles.basicContainer}>
-            <Image source={require("../assets/FitAll.png")} style={styles.logo} />
+            <Image source={require("../assets/FitAll.png")} style={styles.logoMain} />
             <Text style={styles.slogan}>PRIORITIZE YOU!</Text>
             <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.whiteText}>Login</Text>

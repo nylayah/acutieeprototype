@@ -54,17 +54,18 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: 30,
     },
-    logo: {
-        width: 200,
-        height: 200,
+    logoMain: {
+        width: 250,
+        height: 250,
         marginTop: 50,
+        alignItems: 'center',
         justifyContent: "flex-start",
     },
     slogan: {
         fontSize: 27,
         color: colors.primary,
         marginTop: 50,
-        marginBottom: 200,
+        marginBottom: 150,
         fontWeight: "bold",
         textAlign: "center",
     },
