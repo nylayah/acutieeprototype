@@ -42,6 +42,12 @@ const styles = StyleSheet.create({
         bottom: 0,
         textAlign: "center",
     },
+    darkText: {
+        fontSize: 20,
+        color: colors.dark,
+        textAlign: "center",
+
+    },
     grayText: {
         fontSize: 18,
         color: colors.secondary,
