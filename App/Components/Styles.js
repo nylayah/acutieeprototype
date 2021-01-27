@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#eeeeeeff",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 15,
+        borderRadius: 30,
     },
     logo: {
         width: 200,
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     slogan: {
         fontSize: 27,
         color: "#e63a46",
-        marginBottom: 300,
+        marginTop: 50,
+        marginBottom: 200,
         fontWeight: "bold",
         textAlign: "center",
     },
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#e63a46",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 15,
+        borderRadius: 30,
         marginBottom: 20,
         marginTop: 40,
     },

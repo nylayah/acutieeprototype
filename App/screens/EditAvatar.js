@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity } from 'react-native';
-import { styles } from '../Styles';
+import { styles } from '../Components/Styles';
 import { Ionicons } from "@expo/vector-icons";
 
 
