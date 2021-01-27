@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, } from 'react';
 import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity, ScrollView, Animated } from 'react-native';
-import { styles } from '../Components/Styles';
+import { styles } from '../Config/Styles';
 
 
 const FadeInView = (props) => {

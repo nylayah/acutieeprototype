@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { styles } from '../Components/Styles';
+import { styles } from '../Config/Styles';
 
 
 
