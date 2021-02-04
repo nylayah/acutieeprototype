@@ -68,6 +68,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
     },
+    iconStyleS: {
+        justifyContent: "center",
+        color: colors.secondary,
+        // marginTop: '10%',
+        // marginBottom: '10%',
+        paddingBottom: 10,
+        paddingTop: 10,
+    },
     slogan: {
         fontSize: 27,
         color: colors.primary,
@@ -96,6 +104,7 @@ const styles = StyleSheet.create({
     sendMessage: {
         width: "85%",
         backgroundColor: colors.secondary,
+        color: colors.primary,
         borderRadius: 20,
         height: 45,
         fontSize: 18,
