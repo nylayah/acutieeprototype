@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 30,
+        marginTop: '5%'
     },
     logoMain: {
         width: 250,
