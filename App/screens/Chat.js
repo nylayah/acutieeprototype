@@ -1,36 +1,36 @@
 import React from 'react';
 import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import { colors, styles } from '../Config/Styles';
-
+import { Ionicons } from '@expo/vector-icons';
 
 
 function ChatScreen({ navigation }) {
     return (
         <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.dark, alignItems: "center", flex: 1, }}>
-            <View style={styles.chatContainer} style={{ flex: 3, flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
+            <View style={styles.chatContainer} style={{ flex: 1.25, flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <View style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }} />
                 <TouchableOpacity style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
                     <Image source={require("../assets/avataaars.png")} style={{ width: 50, height: 50, }} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }}>
-                    <Image source={require("../assets/threedots.png")} style={{ width: 50, height: 50, }} />
+                <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", paddingTop: 0 }}>
+                    <Ionicons name="settings" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
 
                 <View />
             </View>
-            <View style={{ backgroundColor: colors.light, alignItems: "center", height: 690, width: "100%", justifyContent: "flex-end", padding: 10, }}>
+            <View style={{ backgroundColor: colors.light, alignItems: "center", flex: 15, width: "100%", justifyContent: "flex-end", padding: 10, }}>
                 <TextInput style={styles.sendMessage} placeholder="Send Message..." />
             </View>
 
-            <View style={{ backgroundColor: colors.dark, bottom: 0, flexDirection: "row", flex: 2, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
+            <View style={{ backgroundColor: colors.dark, bottom: 0, flexDirection: "row", flex: 1.25, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <TouchableOpacity style={{ flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Home')}>
-                    <Image source={require("../assets/home.png")} style={{ width: 40, height: 40, }} />
+                    <Ionicons name="home" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
                 <View style={{ flex: 1, alignItems: "center" }}>
-                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, }} />
+                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, marginTop: '10%' }} />
                 </View>
-                <TouchableOpacity style={{ flex: 1, alignItems: "center" }} onPress={() => navigation.navigate('Chat')}>
-                    <Image source={require("../assets/chat.png")} style={{ width: 50, height: 50, }} />
+                <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "flex-end" }} onPress={() => navigation.navigate('Chat')}>
+                    <Ionicons name="chatbubble-ellipses" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
