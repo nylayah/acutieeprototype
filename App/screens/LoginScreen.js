@@ -23,7 +23,7 @@ function LoginScreen({ navigation }) {
             <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate('Chat')}>
                 <Text style={styles.whiteText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate('Create Account')}>
+            <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate('Create Account Form')}>
                 <Text style={styles.copyright}>Create Account</Text>
             </TouchableOpacity>
 

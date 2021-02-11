@@ -13,7 +13,7 @@ function WelcomeScreen({ navigation }) {
             <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.whiteText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Create Account')}>
+            <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Create Account Form')}>
                 <Text style={styles.redText}>Create an Account</Text>
             </TouchableOpacity>
             <View style={{ justifyContent: "flex-end", marginTop: 20, }}>
