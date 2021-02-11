@@ -10,17 +10,20 @@ import HomeScreen from './App/screens/HomeScreen';
 import ChatScreen from './App/screens/Chat';
 import Settings from './App/screens/Settings';
 import EditAvatar from './App/screens/EditAvatar';
+import CreateAccountForm from './App/Components/CreateAccountForm';
 
 const Stack = createStackNavigator();
 
 
 export default function App() {
   return (
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome" headerMode="false">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Create Account" component={CreateAccountScreen} />
+        <Stack.Screen name="Create Account Form" component={CreateAccountForm} />
         <Stack.Screen name="Meet Acutiee" component={MeetAcutiee} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
@@ -28,4 +31,7 @@ export default function App() {
         <Stack.Screen name="Edit Avatar" component={EditAvatar} />
       </Stack.Navigator>
     </NavigationContainer>);
+
+
+
 }

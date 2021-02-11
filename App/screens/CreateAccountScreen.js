@@ -19,7 +19,7 @@ function SignUpScreen({ navigation }) {
             <TextInput style={styles.textInputArea} placeholder={"email"} />
             <TextInput style={styles.textInputArea} placeholder={"username"} />
             <TextInput style={styles.textInputArea} placeholder={"password"} />
-            <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate("Meet Acutiee")}>
+            <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate("Create Account Form")}>
                 <Text style={styles.whiteText}>Create Account</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Login")}>
