@@ -12,9 +12,10 @@ function Settings({ navigation }) {
                 <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
             </TouchableOpacity>
 
-            <Text>this is settings page</Text>
 
-
+            <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate("Welcome")}>
+                <Text style={styles.whiteText} >Logout</Text>
+            </TouchableOpacity>
 
 
 
