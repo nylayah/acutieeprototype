@@ -18,7 +18,7 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome" headerMode="false">
+      <Stack.Navigator initialRouteName="Meet Acutiee" headerMode="false">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login Form" component={LoginScreenForm} />
         <Stack.Screen name="Create Account Form" component={CreateAccountForm} />

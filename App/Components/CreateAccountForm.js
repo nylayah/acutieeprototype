@@ -15,7 +15,7 @@ function CreateAccountForm({ navigation }) {
             initialValues={{ username: '', email: '', password: '', }}
             onSubmit={(values) => {
                console.log(values);
-               navigation.navigate("Meet Acutiee")
+               navigation.navigate("Chat")
             }}
          >
             {({ handleChange, handleSubmit, values }) => (

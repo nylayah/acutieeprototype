@@ -78,7 +78,7 @@ function MeetAcutiee1({ navigation }) {
         </View>
         <View style={styles.basicContainerRed}>
           <Text style={styles.whiteText}>Acutiee works with you to help you ACHIEVE and MAINTAIN your goals</Text>
-          <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Chat')}>
+          <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Welcome')}>
             <Text style={styles.redText}>Get Started!</Text>
           </TouchableOpacity>
         </View>
