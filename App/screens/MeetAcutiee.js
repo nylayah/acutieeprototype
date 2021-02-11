@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, } from 'react';
 import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, Button, TouchableOpacity, ScrollView, Animated } from 'react-native';
-import { styles } from '../Config/Styles';
+import { styles, colors } from '../Config/Styles';
+import { AntDesign } from '@expo/vector-icons';
 
 
 const FadeInView = (props) => {
@@ -66,23 +67,25 @@ function MeetAcutiee1({ navigation }) {
       <ScrollView
         horizontal={true}
         contentContainerStyle={{ width: `${100 * 3}%` }}
-        showsHorizontalScrollIndicator={true}
+        showsHorizontalScrollIndicator={false}
         scrollEventThrottle={200}
         decelerationRate="fast"
         pagingEnabled>
         <View style={styles.basicContainerRed}>
-          <Text style={styles.whiteText}>Meet Acutiee...</Text>
+          <Text style={styles.whiteText}>Meet Acutiee</Text>
+          <Text style={styles.whiteText}>your motivator, guide, and support system</Text>
         </View>
         <View style={styles.basicContainerRed}>
-          <Text style={styles.whiteText}>Your motivator, guide, support system but most importantly a friend</Text>
+          <Text style={styles.whiteText}>who helps you ACHIEVE and MAINTAIN your goals by...</Text>
         </View>
         <View style={styles.basicContainerRed}>
-          <Text style={styles.whiteText}>Acutiee works with you to help you ACHIEVE and MAINTAIN your goals</Text>
+          <Text style={styles.whiteText}>PRIOROTIZING YOU!</Text>
           <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Welcome')}>
             <Text style={styles.redText}>Get Started!</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
+
     </SafeAreaView>
 
   );
