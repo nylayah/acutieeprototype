@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.light,
         alignItems: "center",
+        justifyContent: "center",
         padding: 10,
 
     },
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
         marginTop: 50,
         alignItems: 'center',
         justifyContent: "flex-start",
+        marginLeft: "auto",
+        marginRight: "auto",
     },
     iconStyleS: {
         justifyContent: "center",
@@ -94,6 +97,8 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         marginBottom: 20,
         marginTop: 40,
+        marginRight: "auto",
+        marginLeft: "auto",
     },
     redText: {
         fontSize: 25,
@@ -122,6 +127,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingLeft: '2.5%',
         marginTop: 20,
+        alignContent: "center",
+        justifyContent: "center",
+        marginRight: "auto",
+        marginLeft: "auto",
+
+
     },
     whiteText: {
         fontSize: 25,

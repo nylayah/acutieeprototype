@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './App/screens/WelcomeScreen';
 import LoginScreen from './App/screens/LoginScreen';
-import CreateAccountScreen from './App/screens/CreateAccountScreen';
 import MeetAcutiee from './App/screens/MeetAcutiee';
 import HomeScreen from './App/screens/HomeScreen';
 import ChatScreen from './App/screens/Chat';
@@ -22,7 +21,6 @@ export default function App() {
       <Stack.Navigator initialRouteName="Welcome" headerMode="false">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Create Account" component={CreateAccountScreen} />
         <Stack.Screen name="Create Account Form" component={CreateAccountForm} />
         <Stack.Screen name="Meet Acutiee" component={MeetAcutiee} />
         <Stack.Screen name="Home" component={HomeScreen} />

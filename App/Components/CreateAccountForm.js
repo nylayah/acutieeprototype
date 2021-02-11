@@ -10,7 +10,7 @@ import * as yup from 'yup';
 function CreateAccountForm({ navigation }) {
 
    return (
-      <SafeAreaView styles={styles.basicContainer}>
+      <SafeAreaView styles={styles.basicContainer} style={{ backgroundColor: colors.light, flex: 1 }}>
          <Formik
             initialValues={{ username: '', email: '', password: '', }}
             onSubmit={(values) => {
@@ -20,47 +20,26 @@ function CreateAccountForm({ navigation }) {
          >
             {({ handleChange, handleSubmit, values }) => (
                <>
+                  <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
+                     <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
+                  </TouchableOpacity>
+                  <Image source={require("../assets/FitAll.png")} style={styles.logoMain} />
+                  <Text style={styles.redText}>Let's get started...</Text>
+                  <Text style={styles.darkText}>Create an account to get started</Text>
                   <TextInput
-                     style={{
-                        width: "100%",
-                        backgroundColor: colors.secondary,
-                        borderRadius: 18,
-                        color: colors.medium,
-                        height: 50,
-                        fontSize: 20,
-                        paddingLeft: '2.5%',
-                        marginTop: 20,
-                     }}
+                     style={styles.textInputArea}
                      placeholder={"username"}
                      onChangeText={handleChange("username")}
                      value={values.username}
                   />
-                  <TextInput style={{
-                     width: "100%",
-                     backgroundColor: colors.secondary,
-                     borderRadius: 18,
-                     color: colors.medium,
-                     height: 50,
-                     fontSize: 20,
-                     paddingLeft: '2.5%',
-                     marginTop: 20,
-                  }}
+                  <TextInput style={styles.textInputArea}
                      placeholder={"email"}
                      onChangeText={handleChange("email")}
                      value={values.email}
                      keyboardType={'email-address'}
                   />
                   <TextInput
-                     style={{
-                        width: "100%",
-                        backgroundColor: colors.secondary,
-                        borderRadius: 18,
-                        color: colors.medium,
-                        height: 50,
-                        fontSize: 20,
-                        paddingLeft: '2.5%',
-                        marginTop: 20,
-                     }}
+                     style={styles.textInputArea}
                      placeholder={"password"}
                      onChangeText={handleChange("password")}
                      value={values.password}
