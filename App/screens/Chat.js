@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import { colors, styles } from '../Config/Styles';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 
 function ChatScreen({ navigation }) {
@@ -18,8 +18,9 @@ function ChatScreen({ navigation }) {
 
                 <View />
             </View>
-            <View style={{ backgroundColor: colors.light, alignItems: "center", flex: 15, width: "100%", justifyContent: "flex-end", padding: 10, }}>
+            <View style={{ backgroundColor: colors.light, alignItems: "flex-end", flex: 15, width: "100%", justifyContent: "flex-end", padding: 10, flexDirection: "row" }}>
                 <TextInput style={styles.sendMessage} placeholder="Send Message..." />
+                <AntDesign name="upcircle" size={35} style={styles.iconStyleR} />
             </View>
 
             <View style={{ backgroundColor: colors.dark, bottom: 0, flexDirection: "row", flex: 1.25, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>

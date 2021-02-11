@@ -80,6 +80,14 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         paddingTop: 10,
     },
+    iconStyleR: {
+        justifyContent: "center",
+        color: colors.primary,
+        // marginTop: '10%',
+        // marginBottom: '10%',
+        paddingBottom: 5,
+        //paddingTop: 10,
+    },
     slogan: {
         fontSize: 27,
         color: colors.primary,
