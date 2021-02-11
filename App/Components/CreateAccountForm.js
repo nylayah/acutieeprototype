@@ -47,7 +47,7 @@ function CreateAccountForm({ navigation }) {
                   <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >
                      <Text style={styles.whiteText} >Create Account</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Login")}>
+                  <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Login Form")}>
                      <Text style={styles.copyright}>Login</Text>
                   </TouchableOpacity>
                </>

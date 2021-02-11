@@ -10,7 +10,7 @@ function WelcomeScreen({ navigation }) {
         <SafeAreaView style={styles.basicContainer}>
             <Image source={require("../assets/FitAll.png")} style={styles.logoMain} />
             <Text style={styles.slogan}>PRIORITIZE YOU!</Text>
-            <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate('Login')}>
+            <TouchableOpacity style={styles.redButton} onPress={() => navigation.navigate('Login Form')}>
                 <Text style={styles.whiteText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.grayButton} onPress={() => navigation.navigate('Create Account Form')}>
