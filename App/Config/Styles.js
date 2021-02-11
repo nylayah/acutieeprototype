@@ -63,6 +63,31 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         marginTop: '5%'
     },
+    homeTab: {
+        flex: .33,
+        backgroundColor: colors.primary,
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 10,
+        borderRadius: 30,
+        margin: 5,
+        //width: '33%'
+    },
+    homeTabC: {
+        flexDirection: "row",
+        backgroundColor: colors.medium,
+        alignItems: "center",
+        padding: 10,
+        borderRadius: 30,
+        margin: 1,
+    },
+    homeTabText: {
+        fontSize: 12,
+        color: colors.secondary,
+        bottom: 0,
+        padding: 10,
+
+    },
     logoMain: {
         width: 250,
         height: 250,

@@ -1,28 +1,108 @@
 import React from 'react';
-import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import { ImageBackground, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity, ScrollView, } from 'react-native';
 import { colors, styles } from '../Config/Styles';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome5, Foundation } from '@expo/vector-icons';
 
 
 function HomeScreen({ navigation }) {
     return (
-        <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.dark, alignItems: "center", flex: 1, }}>
+        <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.medium, alignItems: "center", flex: 1, }}>
             <View style={styles.chatContainer} style={{ flex: 1.25, flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
-                <View style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }} />
-                <TouchableOpacity style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
+                <View style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} />
+                <TouchableOpacity style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
                     <Image source={require("../assets/User.jpg")} style={{ width: 50, height: 50, borderRadius: 25 }} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", paddingTop: 0 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", paddingTop: 0 }}>
                     <Ionicons name="settings" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
-
-                <View />
-            </View>
-            <View style={{ backgroundColor: colors.light, alignItems: "center", flex: 15, width: "100%", justifyContent: "flex-end", padding: 10, }}>
-                <Text style={{ color: colors.primary, fontSize: 50, }}>HomePage</Text>
             </View>
 
-            <View style={{ backgroundColor: colors.dark, bottom: 0, flexDirection: "row", flex: 1.25, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
+
+            <View style={{ backgroundColor: colors.light, alignItems: "center", flex: 15, width: "100%", padding: 10, }}>
+                <Text style={styles.darkText}>To Do List</Text>
+                <ScrollView
+                    horizontal={true}
+                    contentContainerStyle={{ width: `${66 * 3}%` }}
+                    showsHorizontalScrollIndicator={true}
+                    scrollEventThrottle={200}
+                    decelerationRate="fast"
+                    pagingEnabled
+                    style={{
+                        flex: 1,
+                        borderRadius: 25,
+                        margin: 10,
+                    }}
+                >
+                    <TouchableOpacity style={styles.homeTab} >
+
+                        <Text style={styles.homeTabText}>Walk for 10 mins</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab}>
+                        <Text style={styles.homeTabText}>Make salad for dinner</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab}>
+                        <Text style={styles.homeTabText}>Drink 64 oz of water</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab}>
+                        <Text style={styles.homeTabText}>10 squats per hour</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab} >
+
+                        <Text style={styles.homeTabText}>Check fiber intake</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab}>
+                        <Text style={styles.homeTabText}>Log lunch</Text>
+                    </TouchableOpacity>
+
+                </ScrollView>
+
+                <Text style={styles.darkText}>Track Progress</Text>
+                <View style={{ width: '95%' }}>
+                    <TouchableOpacity style={styles.homeTabC}>
+                        <MaterialCommunityIcons name="silverware-fork-knife" size={30} style={styles.iconStyleS} />
+                        <Text style={styles.homeTabText}>Current Eating habits</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTabC}>
+                        <FontAwesome5 name="running" size={30} style={styles.iconStyleS} />
+                        <Text style={styles.homeTabText}>Activities</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTabC}>
+                        <Foundation name="target" size={30} style={styles.iconStyleS} />
+                        <Text style={styles.homeTabText}>Goals</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <Text style={styles.darkText}>Reccomended</Text>
+
+
+                <ScrollView
+                    horizontal={true}
+                    contentContainerStyle={{ width: `${33 * 3}%` }}
+                    showsHorizontalScrollIndicator={true}
+                    scrollEventThrottle={200}
+                    decelerationRate="fast"
+                    pagingEnabled
+                    style={{
+                        flex: 1,
+                        borderRadius: 25,
+                        margin: 10,
+                    }}
+                >
+
+                    <TouchableOpacity style={styles.homeTab}>
+                        <Text style={styles.homeTabText}>Read</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab} >
+
+                        <Text style={styles.homeTabText}>Watch</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.homeTab}>
+                        <Text style={styles.homeTabText}>Listen</Text>
+                    </TouchableOpacity>
+                </ScrollView >
+            </View>
+
+            <View style={{ backgroundColor: colors.medium, bottom: 0, flexDirection: "row", flex: 1.25, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <TouchableOpacity style={{ flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Home')}>
                     <Ionicons name="home" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
@@ -33,6 +113,7 @@ function HomeScreen({ navigation }) {
                     <Ionicons name="chatbubble-ellipses" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
             </View>
+
         </SafeAreaView>
     );
 
