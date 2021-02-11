@@ -10,7 +10,7 @@ function HomeScreen({ navigation }) {
             <View style={styles.chatContainer} style={{ flex: 1.25, flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <View style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }} />
                 <TouchableOpacity style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
-                    <Image source={require("../assets/avataaars.png")} style={{ width: 50, height: 50, }} />
+                    <Image source={require("../assets/User.jpg")} style={{ width: 50, height: 50, borderRadius: 25 }} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ backgroundColor: colors.dark, flex: 1, alignItems: "center", paddingTop: 0 }}>
                     <Ionicons name="settings" size={35} style={styles.iconStyleS} />
