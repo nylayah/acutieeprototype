@@ -12,8 +12,9 @@ function ChatScreen({ navigation }) {
     return(
       
       <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.medium, alignItems: "center", flex: 1, }}>
-           
-            <View style={styles.chatContainer} style={{ flex: 1.25, flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
+           <KeyboardAvoidingView  behavior={Platform.OS === "ios" ? "padding" : null} style={{flex:15}}>
+            <View styles={{flex:3}}>
+            <View style={styles.chatContainer} style={{flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <View style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} />
                 <TouchableOpacity style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
                     <Image source={require("../assets/avataaars.png")} style={{ width: 50, height: 50, }} />
@@ -23,10 +24,11 @@ function ChatScreen({ navigation }) {
                 </TouchableOpacity>
                 <View />    
             </View>
-            <Text style={{color:"white", fontSize:12,}}>Acutiee</Text>
-            
+            <Text style={{color:"white", fontSize:12, alignSelf:"center"}}>Acutiee</Text>
+            </View>
            
-            <View style={{ backgroundColor: colors.light, alignItems: "flex-end", flex: 15, width: "100%", justifyContent: "flex-end", padding: 10, }}>
+            
+            <View style={{ backgroundColor: colors.light, alignItems: "flex-end", flex: 5, width: "100%", justifyContent: "flex-end", padding: 10 }}>
                 <ScrollView contentContainerStyle={{backgroundColor: colors.light, width: "100%", padding: 10,justifyContent:"flex-end"}}>
                    <View style={styles.chatmessageuser}>
                     <Text style={styles.chattextuser}>heyy!</Text>
@@ -41,22 +43,25 @@ function ChatScreen({ navigation }) {
                     <Text style={styles.chattextacutiee}>I'll set up a plan to help you efficently reach your goals, just let me know what they are.</Text>
                    </View>
                 </ScrollView>
-                <View style={{flexDirection:"row", }}>
+                
+                
+                <View style={{flexDirection:"row", alignItems:"center", alignContent:"center" }}>
                 <TextInput style={styles.sendMessage} placeholder="Send Message..." />
                 <TouchableOpacity>
-                    <AntDesign name="upcircle" size={40} style={styles.iconStyleR} />
+                    <AntDesign name="upcircle" size={35} style={styles.iconStyleR} />
                 </TouchableOpacity>
                 </View>
             </View>
-
-            <View style={{ backgroundColor: colors.medium, bottom: 0, flexDirection: "row", flex: 1.25, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
+            </KeyboardAvoidingView>
+           
+            <View style={{ backgroundColor: colors.medium, bottom: 0, flexDirection: "row", alignItems: "center", flex:1}} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <TouchableOpacity style={{ flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Home')}>
                     <Ionicons name="home" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
-                <View style={{ flex: 1, alignItems: "center" }}>
-                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, marginTop: '10%' }} />
+                <View style={{ flex: 1, alignItems: "center",}}>
+                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, marginTop:"10%" }} />
                 </View>
-                <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "flex-end" }} onPress={() => navigation.navigate('Chat')}>
+                <TouchableOpacity style={{ flex: 1, alignItems: "center"}} onPress={() => navigation.navigate('Chat')}>
                     <Ionicons name="chatbubble-ellipses" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
             </View>

@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     chatContainer: {
         backgroundColor: colors.dark,
         alignItems: "center",
-        flex: -1,
     },
     chatmessageuser:{
         borderRadius: 20,
