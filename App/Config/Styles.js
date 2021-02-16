@@ -34,7 +34,32 @@ const styles = StyleSheet.create({
     chatContainer: {
         backgroundColor: colors.dark,
         alignItems: "center",
-        flex: -1,
+    },
+    chatmessageuser:{
+        borderRadius: 20,
+        borderBottomRightRadius:0,
+        backgroundColor: colors.primary,
+        alignSelf:"flex-start",
+        padding:10,
+        left:310, 
+        marginBottom:5,
+    },
+    chatmessageacutiee:{
+        borderRadius: 20,
+        borderBottomLeftRadius:0,
+        backgroundColor: "white",
+        alignSelf:"flex-start",
+        padding:10,
+        right:5,
+        marginBottom:5,
+    },
+    chattextacutiee:{
+        fontSize:15,
+        color:colors.dark,
+    },
+    chattextuser:{
+        fontSize:15,
+        color:"white",
     },
     copyright: {
         fontSize: 14,

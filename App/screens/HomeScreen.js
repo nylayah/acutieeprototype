@@ -7,6 +7,7 @@ import { Ionicons, MaterialCommunityIcons, FontAwesome5, Foundation } from '@exp
 function HomeScreen({ navigation }) {
     return (
         <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.medium, alignItems: "center", flex: 1, }}>
+            <View style={{flex:15}}>
             <View style={styles.chatContainer} style={{ flex: 1.25, flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <View style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} />
                 <TouchableOpacity style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
@@ -57,7 +58,7 @@ function HomeScreen({ navigation }) {
                 </ScrollView>
 
                 <Text style={styles.darkText}>Track Progress</Text>
-                <View style={{ width: '95%' }}>
+                <View style={{width:400 }}>
                     <TouchableOpacity style={styles.homeTabC}>
                         <MaterialCommunityIcons name="silverware-fork-knife" size={30} style={styles.iconStyleS} />
                         <Text style={styles.homeTabText}>Current Eating habits</Text>
@@ -99,10 +100,10 @@ function HomeScreen({ navigation }) {
                     <TouchableOpacity style={styles.homeTab}>
                         <Text style={styles.homeTabText}>Listen</Text>
                     </TouchableOpacity>
-                </ScrollView >
+                </ScrollView>
             </View>
-
-            <View style={{ backgroundColor: colors.medium, bottom: 0, flexDirection: "row", flex: 1.25, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
+           </View>
+            <View style={{ backgroundColor: colors.medium, bottom: 0, flexDirection: "row", flex: 1, alignItems: "center", }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                 <TouchableOpacity style={{ flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Home')}>
                     <Ionicons name="home" size={35} style={styles.iconStyleS} />
                 </TouchableOpacity>
