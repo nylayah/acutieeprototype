@@ -41,8 +41,9 @@ const styles = StyleSheet.create({
         backgroundColor: colors.primary,
         alignSelf: "flex-start",
         padding: 10,
-        left: 275,
+        left: 300,
         marginBottom: 5,
+
     },
     chatmessageacutiee: {
         borderRadius: 20,
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
         padding: 10,
         right: 5,
         marginBottom: 5,
+
     },
     chattextacutiee: {
         fontSize: 15,

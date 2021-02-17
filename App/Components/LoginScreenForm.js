@@ -3,6 +3,7 @@ import { Image, SafeAreaView, Text, TouchableOpacity, TextInput, View } from 're
 import { Ionicons } from '@expo/vector-icons';
 import { colors, styles } from '../Config/Styles';
 import { Formik } from 'formik';
+import axios from 'axios';
 import * as yup from 'yup';
 
 
@@ -10,13 +11,37 @@ import * as yup from 'yup';
 
 function LoginScreenForm({ navigation }) {
 
+    function requestLogin(username, password) {
+        const urlEndpoint = 'http://localhost:8000' + '/login';
+        const request = {
+            username: username,
+            password: password,
+        };
+
+        return new Promise((resolve, reject) => {
+            axios
+                .post(urlEndpoint, request, {
+                })
+                .then(function (response) {
+                    resolve(response.data);
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+        });
+    }
+
     return (
         <SafeAreaView styles={styles.basicContainer} style={{ backgroundColor: colors.light, flex: 1 }}>
             <Formik
                 initialValues={{ username: '', password: '', }}
                 onSubmit={(values) => {
-                    console.log(values);
-                    navigation.navigate("Chat")
+                    const response = requestLogin(values.username, values.password)
+                        .then(function (response) {
+                            if (response) {
+                                navigation.navigate("Chat")
+                            }
+                        })
                 }}
             >
                 {({ handleChange, handleSubmit, values }) => (
