@@ -35,31 +35,31 @@ const styles = StyleSheet.create({
         backgroundColor: colors.dark,
         alignItems: "center",
     },
-    chatmessageuser:{
+    chatmessageuser: {
         borderRadius: 20,
-        borderBottomRightRadius:0,
+        borderBottomRightRadius: 0,
         backgroundColor: colors.primary,
-        alignSelf:"flex-start",
-        padding:10,
-        left:310, 
-        marginBottom:5,
+        alignSelf: "flex-start",
+        padding: 10,
+        left: 275,
+        marginBottom: 5,
     },
-    chatmessageacutiee:{
+    chatmessageacutiee: {
         borderRadius: 20,
-        borderBottomLeftRadius:0,
+        borderBottomLeftRadius: 0,
         backgroundColor: "white",
-        alignSelf:"flex-start",
-        padding:10,
-        right:5,
-        marginBottom:5,
+        alignSelf: "flex-start",
+        padding: 10,
+        right: 5,
+        marginBottom: 5,
     },
-    chattextacutiee:{
-        fontSize:15,
-        color:colors.dark,
+    chattextacutiee: {
+        fontSize: 15,
+        color: colors.dark,
     },
-    chattextuser:{
-        fontSize:15,
-        color:"white",
+    chattextuser: {
+        fontSize: 15,
+        color: "white",
     },
     copyright: {
         fontSize: 14,
