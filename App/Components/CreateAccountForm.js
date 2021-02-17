@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, SafeAreaView, Text, TouchableOpacity, TextInput, View } from 'react-native';
+import { Image, SafeAreaView, Text, TouchableOpacity, TextInput, View, KeyboardAvoidingView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Styles, { colors, styles } from '../Config/Styles';
 import { Formik } from 'formik';
@@ -47,30 +47,34 @@ function CreateAccountForm({ navigation }) {
          >
             {({ handleChange, handleSubmit, values }) => (
                <>
-                  <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
-                     <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
-                  </TouchableOpacity>
-                  <Image source={require("../assets/FitAll.png")} style={styles.logoMain} />
-                  <Text style={styles.redText}>Let's get started...</Text>
-                  <Text style={styles.darkText}>Create an account to get started</Text>
-                  <TextInput
-                     style={styles.textInputArea}
-                     placeholder={"username"}
-                     onChangeText={handleChange("username")}
-                     value={values.username}
-                  />
-                  <TextInput style={styles.textInputArea}
-                     placeholder={"email"}
-                     onChangeText={handleChange("email")}
-                     value={values.email}
-                     keyboardType={'email-address'}
-                  />
-                  <TextInput
-                     style={styles.textInputArea}
-                     placeholder={"password"}
-                     onChangeText={handleChange("password")}
-                     value={values.password}
-                  />
+                  <KeyboardAvoidingView>
+
+                     <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
+                        <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
+                     </TouchableOpacity>
+                     <Image source={require("../assets/FitAll.png")} style={styles.logoMain} />
+                     <Text style={styles.redText}>Let's get started...</Text>
+                     <Text style={styles.darkText}>Create an account to get started</Text>
+                     <TextInput
+                        style={styles.textInputArea}
+                        placeholder={"username"}
+                        onChangeText={handleChange("username")}
+                        value={values.username}
+                     />
+                     <TextInput style={styles.textInputArea}
+                        placeholder={"email"}
+                        onChangeText={handleChange("email")}
+                        value={values.email}
+                        keyboardType={'email-address'}
+                     />
+                     <TextInput
+                        style={styles.textInputArea}
+                        placeholder={"password"}
+                        onChangeText={handleChange("password")}
+                        value={values.password}
+                     />
+                  </KeyboardAvoidingView>
+
                   <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >
                      <Text style={styles.whiteText} >Create Account</Text>
                   </TouchableOpacity>
