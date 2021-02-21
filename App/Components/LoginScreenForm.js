@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors, styles } from '../Config/Styles';
 import { Formik } from 'formik';
 import axios from 'axios';
+import { API_URL } from "@env"
 import * as yup from 'yup';
 
 
@@ -12,12 +13,12 @@ import * as yup from 'yup';
 function LoginScreenForm({ navigation }) {
 
     function requestLogin(username, password) {
-        const urlEndpoint = 'http://localhost:8000' + '/login';
+        console.log(API_URL)
+        const urlEndpoint = API_URL + '/login';
         const request = {
             username: username,
             password: password,
         };
-
         return new Promise((resolve, reject) => {
             axios
                 .post(urlEndpoint, request, {

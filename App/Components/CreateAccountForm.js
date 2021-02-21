@@ -4,6 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import Styles, { colors, styles } from '../Config/Styles';
 import { Formik } from 'formik';
 import axios from 'axios';
+import { API_URL } from "@env"
+
 import * as yup from 'yup';
 //import MeetAcutiee from '../screens/MeetAcutiee';
 
@@ -11,7 +13,7 @@ import * as yup from 'yup';
 function CreateAccountForm({ navigation }) {
 
    function requestSignUp(username, email, password) {
-      const urlEndpoint = 'http://localhost:8000' + '/signup';
+      const urlEndpoint = API_URL + '/signup';
       const request = {
          username: username,
          email: email,
