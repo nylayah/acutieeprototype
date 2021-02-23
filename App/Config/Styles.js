@@ -76,6 +76,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
 
     },
+    errorMessage: {
+        fontSize: 10,
+        color: colors.primary,
+        textAlign: "center",
+        marginTop: 1,
+        //marginBottom: 10,
+    },
     grayText: {
         fontSize: 18,
         color: colors.secondary,

@@ -6,9 +6,15 @@ import { Formik } from 'formik';
 import axios from 'axios';
 import { API_URL } from "@env"
 
-import * as yup from 'yup';
+import * as Yup from 'yup';
 //import MeetAcutiee from '../screens/MeetAcutiee';
 
+const validationSchema = Yup.object().shape({
+   email: Yup.string().required().email().label("Email"),
+   username: Yup.string().required().label("Username"),
+   password: Yup.string().required().min(8).label("Password"),
+
+})
 
 function CreateAccountForm({ navigation }) {
 
@@ -46,8 +52,9 @@ function CreateAccountForm({ navigation }) {
                   })
 
             }}
+            validationSchema={validationSchema}
          >
-            {({ handleChange, handleSubmit, values }) => (
+            {({ handleChange, handleSubmit, values, errors }) => (
                <>
                   <KeyboardAvoidingView>
 
@@ -63,18 +70,24 @@ function CreateAccountForm({ navigation }) {
                         onChangeText={handleChange("username")}
                         value={values.username}
                      />
+                     <Text style={styles.errorMessage} >{errors.username}</Text>
+
                      <TextInput style={styles.textInputArea}
                         placeholder={"email"}
                         onChangeText={handleChange("email")}
                         value={values.email}
                         keyboardType={'email-address'}
                      />
+                     <Text style={styles.errorMessage} >{errors.email}</Text>
+
                      <TextInput
                         style={styles.textInputArea}
                         placeholder={"password"}
                         onChangeText={handleChange("password")}
                         value={values.password}
                      />
+                     <Text style={styles.errorMessage} >{errors.password}</Text>
+
                   </KeyboardAvoidingView>
 
                   <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >

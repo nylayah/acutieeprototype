@@ -2,13 +2,16 @@ import React from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors, styles } from '../Config/Styles';
-import { Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import axios from 'axios';
 import { API_URL } from "@env"
-import * as yup from 'yup';
+import * as Yup from 'yup';
 
 
-
+const validationSchema = Yup.object().shape({
+    username: Yup.string().required().label("Username"),
+    password: Yup.string().required().min(8).label("Password"),
+})
 
 function LoginScreenForm({ navigation }) {
 
@@ -44,8 +47,9 @@ function LoginScreenForm({ navigation }) {
                             }
                         })
                 }}
+                validationSchema={validationSchema}
             >
-                {({ handleChange, handleSubmit, values }) => (
+                {({ handleChange, handleSubmit, values, errors }) => (
                     <>
                         <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
                             <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
@@ -61,13 +65,15 @@ function LoginScreenForm({ navigation }) {
                             onChangeText={handleChange('username')}
                             value={values.username}
                         />
-
+                        <Text style={styles.errorMessage} >{errors.username}</Text>
                         <TextInput
                             style={styles.textInputArea}
                             placeholder={"password"}
                             onChangeText={handleChange('password')}
                             value={values.password}
                         />
+                        <Text style={styles.errorMessage} >{errors.password}</Text>
+
                         <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >
                             <Text style={styles.whiteText} >Login</Text>
                         </TouchableOpacity>
