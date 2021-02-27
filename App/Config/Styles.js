@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
     },
     chatContainer: {
         backgroundColor: colors.dark,
-        alignItems: "center",
+        // alignItems: "center",
     },
     chatmessageuser: {
         borderRadius: 20,
         borderBottomRightRadius: 0,
         backgroundColor: colors.primary,
-        alignSelf: "flex-start",
+        //alignSelf: "flex-end",
         padding: 10,
-        left: 300,
+        // left: 300,
         marginBottom: 5,
 
     },
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         borderBottomLeftRadius: 0,
         backgroundColor: "white",
-        alignSelf: "flex-start",
+        // alignSelf: "flex-end",
         padding: 10,
-        right: 5,
+        // right: 5,
         marginBottom: 5,
 
     },

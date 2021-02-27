@@ -2,12 +2,74 @@ import React, { useEffect, useRef } from 'react';
 import { ImageBackground, Platform, KeyboardAvoidingView, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import { colors, styles } from '../Config/Styles';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
-import { ScrollView } from 'react-native-gesture-handler';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { useState } from 'react';
+
+
+//POST https://dialogflow.googleapis.com/v2/projects/acutiee-hk9x/agent/sessions/laykilla:detectIntent
 
 
 
+function Message({ message, isUser }) {
+    console.log(message)
+    if (isUser) {
+        return (
+            <View style={styles.chatmessageuser}>
+                <Text style={styles.chattextuser}>{message}</Text>
+            </View>
+        )
+    } else {
+        return (
+            <View style={styles.chatmessageacutiee}>
+                <Text style={styles.chattextacutiee}>{message}</Text>
+            </View>
+        )
+    }
+}
 
 function ChatScreen({ navigation }) {
+    const [messages, setMessages] = useState([
+        { message: "heyy!", isUser: true },
+        { message: "hey welcome to acutiee!", isUser: false },
+        { message: "you can text me anything you want to know or need help with regarding ypur health", isUser: false },
+        { message: "I'll set up a plan to help you efficently reach your goals, just let me know what they are.", isUser: false },
+        //{ message: "hey welcome to acutiee!", isUser: false },
+    ])
+
+    const [input, setInput] = useState("")
+    console.log(input)
+
+    const sendMessage = () => {
+        setMessages((old) => [...old, { message: input, isUser: true }])
+
+        fetch(
+            "https://dialogflow.googleapis.com/v2/projects/acutiee-hk9x/agent/sessions/S:detectIntent",
+            {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    queryInput: {
+                        text: {
+                            text: input,
+                            languageCode: "en-US",
+                        },
+                    },
+                }),
+            }
+        )
+            .then((response) => response.text())
+            .then((text) => (text.length ? JSON.parse(text) : {}))
+            .then((responseJson) => {
+                console.log(responseJson);
+            })
+            .catch((error) => {
+                callback(null);
+            });
+        setInput("")
+    }
 
     return (
 
@@ -28,26 +90,16 @@ function ChatScreen({ navigation }) {
                 </View>
 
 
-                <View style={{ backgroundColor: colors.light, alignItems: "flex-end", flex: 5, width: "105%", justifyContent: "flex-end", padding: 10 }}>
-                    <ScrollView contentContainerStyle={{ backgroundColor: colors.light, width: "100%", padding: 10, justifyContent: "flex-end" }}>
-                        <View style={styles.chatmessageuser}>
-                            <Text style={styles.chattextuser}>heyy!</Text>
-                        </View>
-                        <View style={styles.chatmessageacutiee}>
-                            <Text style={styles.chattextacutiee}>hey welcome to acutiee!</Text>
-                        </View>
-                        <View style={styles.chatmessageacutiee}>
-                            <Text style={styles.chattextacutiee}>you can text me anything you want to know or need help with regarding ypur health</Text>
-                        </View>
-                        <View style={styles.chatmessageacutiee}>
-                            <Text style={styles.chattextacutiee}>I'll set up a plan to help you efficently reach your goals, just let me know what they are.</Text>
-                        </View>
-                    </ScrollView>
+                <View style={{ backgroundColor: colors.light, alignItems: "flex-end", flex: 5, width: "105%", justifyContent: "flex-end", padding: 10, }}>
 
+                    <FlatList contentContainerStyle={{ backgroundColor: colors.light, width: "auto", padding: 10, flex: 1 }}
+                        data={messages}
+                        renderItem={({ item }) => <Message isUser={item.isUser} message={item.message} />}
+                    />
 
                     <View style={{ flexDirection: "row", alignItems: "center", alignContent: "center" }}>
-                        <TextInput style={styles.sendMessage} placeholder="Send Message..." />
-                        <TouchableOpacity>
+                        <TextInput style={styles.sendMessage} placeholder="Send Message..." onChangeText={text => setInput(text)} value={input} />
+                        <TouchableOpacity onPress={sendMessage}>
                             <AntDesign name="upcircle" size={35} style={styles.iconStyleR} />
                         </TouchableOpacity>
                     </View>
