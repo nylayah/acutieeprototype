@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, SafeAreaView, Text, TouchableOpacity, TextInput, View, KeyboardAvoidingView } from 'react-native';
+import { Image, SafeAreaView, ScrollView, Text, TouchableOpacity, TextInput, View, KeyboardAvoidingView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Styles, { colors, styles } from '../Config/Styles';
 import { Formik } from 'formik';
@@ -56,11 +56,12 @@ function CreateAccountForm({ navigation }) {
          >
             {({ handleChange, handleSubmit, values, errors }) => (
                <>
-                  <KeyboardAvoidingView>
-
+                  <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}>
+                  <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled' >
                      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
                         <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
                      </TouchableOpacity>
+                    
                      <Image source={require("../assets/FitAll.png")} style={styles.logoMain} />
                      <Text style={styles.redText}>Let's get started...</Text>
                      <Text style={styles.darkText}>Create an account to get started</Text>
@@ -87,8 +88,8 @@ function CreateAccountForm({ navigation }) {
                         value={values.password}
                      />
                      <Text style={styles.errorMessage} >{errors.password}</Text>
-
-                  </KeyboardAvoidingView>
+                 
+                  
 
                   <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >
                      <Text style={styles.whiteText} >Create Account</Text>
@@ -96,6 +97,8 @@ function CreateAccountForm({ navigation }) {
                   <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Login Form")}>
                      <Text style={styles.copyright}>Login</Text>
                   </TouchableOpacity>
+                  </ScrollView>
+                  </KeyboardAvoidingView>
                </>
             )}
          </Formik>
