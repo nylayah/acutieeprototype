@@ -8,10 +8,14 @@ import { API_URL } from "@env"
 
 
 
+
+
 //POST https://dialogflow.googleapis.com/v2/projects/acutiee-hk9x/agent/sessions/laykilla:detectIntent
 
 
 
+    
+  
 function Message({ message, isUser }) {
     console.log(message)
     if (isUser) {
@@ -79,7 +83,7 @@ function ChatScreen({ navigation }) {
 
         <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.medium, alignItems: "center", flex: 1, }}>
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null} style={{ flex: 15 }}>
-                <View styles={{ flex: 3 }}>
+                <View styles={{ flex: 2.5 }}>
                     <View style={styles.chatContainer} style={{ flexDirection: 'row', width: "100%", alignItems: "center" }} contentContainerStyle={{ width: `${100 * 3}%` }}>
                         <View style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} />
                         <TouchableOpacity style={{ backgroundColor: colors.medium, flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Edit Avatar')}>
@@ -94,14 +98,14 @@ function ChatScreen({ navigation }) {
                 </View>
 
 
-                <View style={{ backgroundColor: colors.light, alignItems: "flex-end", flex: 5, width: "105%", justifyContent: "flex-end", padding: 10, }}>
+                <View style={{ backgroundColor: colors.light, flex: 5, width:"100%"}}>
 
-                    <FlatList contentContainerStyle={{ backgroundColor: colors.light, width: "auto", padding: 10, flex: 1 }}
+                    <FlatList contentContainerStyle={{ backgroundColor: colors.light, padding:20, width:"100%" }}
                         data={messages}
                         renderItem={({ item }) => <Message isUser={item.isUser} message={item.message} />}
                     />
 
-                    <View style={{ flexDirection: "row", alignItems: "center", alignContent: "center" }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", paddingBottom:5, width:"100%"}}>
                         <TextInput style={styles.sendMessage} placeholder="Send Message..." onChangeText={text => setInput(text)} value={input} />
                         <TouchableOpacity onPress={sendMessage}>
                             <AntDesign name="upcircle" size={35} style={styles.iconStyleR} />
@@ -110,16 +114,8 @@ function ChatScreen({ navigation }) {
                 </View>
             </KeyboardAvoidingView>
 
-            <View style={{ backgroundColor: colors.medium, bottom: 0, flexDirection: "row", alignItems: "center", flex: 1 }} contentContainerStyle={{ width: `${100 * 3}%` }}>
-                <TouchableOpacity style={{ flex: 1, alignItems: "center", }} onPress={() => navigation.navigate('Home')}>
-                    <Ionicons name="home" size={35} style={styles.iconStyleS} />
-                </TouchableOpacity>
-                <View style={{ flex: 1, alignItems: "center", }}>
-                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, marginTop: "10%" }} />
-                </View>
-                <TouchableOpacity style={{ flex: 1, alignItems: "center" }} onPress={() => navigation.navigate('Chat')}>
-                    <Ionicons name="chatbubble-ellipses" size={35} style={styles.iconStyleS} />
-                </TouchableOpacity>
+            <View style={{ backgroundColor: colors.medium, alignItems: "center", flex: .75, paddingTop:5, alignItems:"center",}}>
+                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, }} />
             </View>
 
         </SafeAreaView>

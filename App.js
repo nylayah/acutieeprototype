@@ -11,6 +11,7 @@ import EditAvatar from './App/screens/EditAvatar';
 import CreateAccountForm from './App/Components/CreateAccountForm';
 import LoginScreenForm from './App/Components/LoginScreenForm';
 
+
 const Stack = createStackNavigator();
 
 

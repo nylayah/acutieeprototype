@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, SafeAreaView, Text, TouchableOpacity, TextInput, View } from 'react-native';
+import { Image, SafeAreaView, KeyboardAvoidingView, ScrollView, Text, TouchableOpacity, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors, styles } from '../Config/Styles';
 import { ErrorMessage, Formik } from 'formik';
@@ -51,6 +51,8 @@ function LoginScreenForm({ navigation }) {
             >
                 {({ handleChange, handleSubmit, values, errors }) => (
                     <>
+                    <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}>
+                    <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled' >
                         <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
                             <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
                         </TouchableOpacity>
@@ -80,7 +82,8 @@ function LoginScreenForm({ navigation }) {
                         <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Create Account Form")}>
                             <Text style={styles.copyright}>Create Account</Text>
                         </TouchableOpacity>
-
+                        </ScrollView>
+                        </KeyboardAvoidingView>
                     </>
                 )}
             </Formik>

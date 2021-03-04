@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         position: "absolute",
-        top: 40,
+        top: 5,
         justifyContent: "flex-start",
         left: 5,
         margin: 20,
@@ -33,15 +33,13 @@ const styles = StyleSheet.create({
     },
     chatContainer: {
         backgroundColor: colors.dark,
-        // alignItems: "center",
     },
     chatmessageuser: {
         borderRadius: 20,
         borderBottomRightRadius: 0,
         backgroundColor: colors.primary,
-        //alignSelf: "flex-end",
+        alignSelf: "flex-end",
         padding: 10,
-        // left: 300,
         marginBottom: 5,
 
     },
@@ -49,9 +47,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         borderBottomLeftRadius: 0,
         backgroundColor: "white",
-        // alignSelf: "flex-end",
+        alignSelf: "flex-start",
         padding: 10,
-        // right: 5,
         marginBottom: 5,
 
     },
@@ -140,12 +137,10 @@ const styles = StyleSheet.create({
         paddingTop: 10,
     },
     iconStyleR: {
-        justifyContent: "center",
+        //justifyContent: "center",
+        //alignContent:"center",
         color: colors.primary,
-        // marginTop: '10%',
-        // marginBottom: '10%',
-        paddingBottom: 5,
-        //paddingTop: 10,
+       marginTop:7,
     },
     slogan: {
         fontSize: 27,
@@ -175,7 +170,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     sendMessage: {
-        width: "85%",
+        width: "89%",
         backgroundColor: colors.secondary,
         color: colors.primary,
         borderRadius: 20,
@@ -183,10 +178,12 @@ const styles = StyleSheet.create({
         fontSize: 18,
         paddingLeft: 12,
         marginTop: 10,
-        left: -15,
+        marginRight:5,
+       
     },
     textInputArea: {
         width: "95%",
+        marginRight:5,
         backgroundColor: colors.secondary,
         borderRadius: 18,
         color: colors.medium,
