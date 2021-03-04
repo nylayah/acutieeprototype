@@ -4,6 +4,8 @@ import { colors, styles } from '../Config/Styles';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { useState } from 'react';
+import { API_URL } from "@env"
+
 
 
 //POST https://dialogflow.googleapis.com/v2/projects/acutiee-hk9x/agent/sessions/laykilla:detectIntent
@@ -29,11 +31,11 @@ function Message({ message, isUser }) {
 
 function ChatScreen({ navigation }) {
     const [messages, setMessages] = useState([
-        { message: "heyy!", isUser: true },
+        /*{ message: "heyy!", isUser: true },
         { message: "hey welcome to acutiee!", isUser: false },
         { message: "you can text me anything you want to know or need help with regarding ypur health", isUser: false },
         { message: "I'll set up a plan to help you efficently reach your goals, just let me know what they are.", isUser: false },
-        //{ message: "hey welcome to acutiee!", isUser: false },
+        //{ message: "hey welcome to acutiee!", isUser: false },*/
     ])
 
     const [input, setInput] = useState("")
@@ -41,36 +43,38 @@ function ChatScreen({ navigation }) {
 
     const sendMessage = () => {
         setMessages((old) => [...old, { message: input, isUser: true }])
-
-        fetch(
-            "https://dialogflow.googleapis.com/v2/projects/acutiee-hk9x/agent/sessions/S:detectIntent",
-            {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    queryInput: {
-                        text: {
-                            text: input,
-                            languageCode: "en-US",
-                        },
+        console.log(input)
+        {
+            fetch(
+                API_URL + '/chatbot?text=' + input,
+                {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
                     },
-                }),
-            }
-        )
-            .then((response) => response.text())
-            .then((text) => (text.length ? JSON.parse(text) : {}))
-            .then((responseJson) => {
-                console.log(responseJson);
-            })
-            .catch((error) => {
-                callback(null);
-            });
-        setInput("")
-    }
+                    body: JSON.stringify({
+                        queryInput: {
+                            text: {
+                                text: input,
+                                languageCode: "en-US",
+                            },
+                        },
+                    }),
+                }
+            )
+                //.then((response) => response.text())
+                //.then((text) => (text.length ? JSON.parse(text) : {}))
+                .then(async (responseJson) => {
+                    let message = await responseJson.text();
+                    setMessages((old) => [...old, { message: message, isUser: false }])
 
+                })
+                .catch((error) => {
+                });
+            setInput("")
+        }
+    }
     return (
 
         <SafeAreaView style={{ flexDirection: "column", backgroundColor: colors.medium, alignItems: "center", flex: 1, }}>
