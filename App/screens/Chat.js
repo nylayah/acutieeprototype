@@ -14,10 +14,10 @@ import { API_URL } from "@env"
 
 
 
-    
-  
+
+
 function Message({ message, isUser }) {
-    console.log(message)
+    // console.log(message)
     if (isUser) {
         return (
             <View style={styles.chatmessageuser}>
@@ -43,11 +43,11 @@ function ChatScreen({ navigation }) {
     ])
 
     const [input, setInput] = useState("")
-    console.log(input)
+    // console.log(input)
 
     const sendMessage = () => {
         setMessages((old) => [...old, { message: input, isUser: true }])
-        console.log(input)
+        // console.log(input)
         {
             fetch(
                 API_URL + '/chatbot?text=' + input,
@@ -98,14 +98,14 @@ function ChatScreen({ navigation }) {
                 </View>
 
 
-                <View style={{ backgroundColor: colors.light, flex: 5, width:"100%"}}>
+                <View style={{ backgroundColor: colors.light, flex: 5, width: "100%" }}>
 
-                    <FlatList contentContainerStyle={{ backgroundColor: colors.light, padding:20, width:"100%" }}
+                    <FlatList contentContainerStyle={{ backgroundColor: colors.light, padding: 20, width: "100%" }}
                         data={messages}
                         renderItem={({ item }) => <Message isUser={item.isUser} message={item.message} />}
                     />
 
-                    <View style={{ flexDirection: "row", alignItems: "center", paddingBottom:5, width:"100%"}}>
+                    <View style={{ flexDirection: "row", alignItems: "center", paddingBottom: 5, width: "100%" }}>
                         <TextInput style={styles.sendMessage} placeholder="Send Message..." onChangeText={text => setInput(text)} value={input} />
                         <TouchableOpacity onPress={sendMessage}>
                             <AntDesign name="upcircle" size={35} style={styles.iconStyleR} />
@@ -114,8 +114,8 @@ function ChatScreen({ navigation }) {
                 </View>
             </KeyboardAvoidingView>
 
-            <View style={{ backgroundColor: colors.medium, alignItems: "center", flex: .75, paddingTop:5, alignItems:"center",}}>
-                    <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, }} />
+            <View style={{ backgroundColor: colors.medium, alignItems: "center", flex: .75, paddingTop: 5, alignItems: "center", }}>
+                <Image source={require("../assets/FitAll.png")} style={{ width: 50, height: 50, }} />
             </View>
 
         </SafeAreaView>
