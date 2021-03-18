@@ -5,7 +5,7 @@ import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { useState } from 'react';
 import { API_URL } from "@env"
-
+import { AutoScrollFlatList } from "react-native-autoscroll-flatlist";
 
 
 
@@ -104,7 +104,7 @@ function ChatScreen({ navigation }) {
 
                 <View style={{ backgroundColor: colors.light, flex: 5, width: "100%" }}>
 
-                    <FlatList id="messages" contentContainerStyle={{ backgroundColor: colors.light, padding: 20, width: "100%" }}
+                    <AutoScrollFlatList id="messages" contentContainerStyle={{ backgroundColor: colors.light, padding: 20, width: "100%" }}
                         data={messages}
                         renderItem={({ item }) => <Message isUser={item.isUser} message={item.message} />}
                     />
