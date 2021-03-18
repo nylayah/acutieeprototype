@@ -12,6 +12,7 @@ const validationSchema = Yup.object().shape({
     username: Yup.string().required().label("Username"),
     password: Yup.string().required().min(8).label("Password"),
 })
+console.log(API_URL)
 
 function LoginScreenForm({ navigation }) {
 
@@ -22,6 +23,8 @@ function LoginScreenForm({ navigation }) {
             username: username,
             password: password,
         };
+        console.log('Hello')
+        console.log(urlEndpoint)
         return new Promise((resolve, reject) => {
             axios
                 .post(urlEndpoint, request, {
@@ -51,38 +54,38 @@ function LoginScreenForm({ navigation }) {
             >
                 {({ handleChange, handleSubmit, values, errors }) => (
                     <>
-                    <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}>
-                    <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled' >
-                        <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
-                            <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
-                        </TouchableOpacity>
-                        <Image source={require("../assets/FitAll.png")} style={styles.logoMain}
-                        //style={{ width: 50, height: 50, justifyContent: "flex-start", padding: 40, margin: 40, }} 
-                        />
-                        <Text style={styles.redText}>Welcome back,</Text>
-                        <Text style={styles.redText}>Let's pick up where you left off...</Text>
-                        <TextInput
-                            style={styles.textInputArea}
-                            placeholder={"username"}
-                            onChangeText={handleChange('username')}
-                            value={values.username}
-                        />
-                        <Text style={styles.errorMessage} >{errors.username}</Text>
-                        <TextInput
-                            style={styles.textInputArea}
-                            placeholder={"password"}
-                            onChangeText={handleChange('password')}
-                            value={values.password}
-                        />
-                        <Text style={styles.errorMessage} >{errors.password}</Text>
+                        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}>
+                            <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps='handled' >
+                                <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Welcome')}>
+                                    <Ionicons name="arrow-back" size={24} style={{ color: colors.primary }} />
+                                </TouchableOpacity>
+                                <Image source={require("../assets/FitAll.png")} style={styles.logoMain}
+                                //style={{ width: 50, height: 50, justifyContent: "flex-start", padding: 40, margin: 40, }} 
+                                />
+                                <Text style={styles.redText}>Welcome back,</Text>
+                                <Text style={styles.redText}>Let's pick up where you left off...</Text>
+                                <TextInput
+                                    style={styles.textInputArea}
+                                    placeholder={"username"}
+                                    onChangeText={handleChange('username')}
+                                    value={values.username}
+                                />
+                                <Text style={styles.errorMessage} >{errors.username}</Text>
+                                <TextInput
+                                    style={styles.textInputArea}
+                                    placeholder={"password"}
+                                    onChangeText={handleChange('password')}
+                                    value={values.password}
+                                />
+                                <Text style={styles.errorMessage} >{errors.password}</Text>
 
-                        <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >
-                            <Text style={styles.whiteText} >Login</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Create Account Form")}>
-                            <Text style={styles.copyright}>Create Account</Text>
-                        </TouchableOpacity>
-                        </ScrollView>
+                                <TouchableOpacity style={styles.redButton} onPress={handleSubmit} >
+                                    <Text style={styles.whiteText} >Login</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.redText} onPress={() => navigation.navigate("Create Account Form")}>
+                                    <Text style={styles.copyright}>Create Account</Text>
+                                </TouchableOpacity>
+                            </ScrollView>
                         </KeyboardAvoidingView>
                     </>
                 )}

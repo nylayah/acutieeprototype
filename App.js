@@ -10,15 +10,18 @@ import Settings from './App/screens/Settings';
 import EditAvatar from './App/screens/EditAvatar';
 import CreateAccountForm from './App/Components/CreateAccountForm';
 import LoginScreenForm from './App/Components/LoginScreenForm';
+import { API_URL } from "@env"
+
 
 
 const Stack = createStackNavigator();
 
 
 export default function App() {
+  console.log(API_URL)
   return (
 
-    <NavigationContainer>
+    < NavigationContainer >
       <Stack.Navigator initialRouteName="Meet Acutiee" headerMode="false">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login Form" component={LoginScreenForm} />
@@ -29,7 +32,7 @@ export default function App() {
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Edit Avatar" component={EditAvatar} />
       </Stack.Navigator>
-    </NavigationContainer>);
+    </NavigationContainer >);
 
 
 

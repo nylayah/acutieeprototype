@@ -10,6 +10,7 @@ import { API_URL } from "@env"
 
 
 
+
 //POST https://dialogflow.googleapis.com/v2/projects/acutiee-hk9x/agent/sessions/laykilla:detectIntent
 
 
@@ -33,6 +34,7 @@ function Message({ message, isUser }) {
     }
 }
 
+
 function ChatScreen({ navigation }) {
     const [messages, setMessages] = useState([
         /*{ message: "heyy!", isUser: true },
@@ -42,13 +44,15 @@ function ChatScreen({ navigation }) {
         //{ message: "hey welcome to acutiee!", isUser: false },*/
     ])
 
+
     const [input, setInput] = useState("")
     // console.log(input)
-
     const sendMessage = () => {
         setMessages((old) => [...old, { message: input, isUser: true }])
-        // console.log(input)
+        console.log(input)
         {
+            console.log(API_URL)
+
             fetch(
                 API_URL + '/chatbot?text=' + input,
                 {
@@ -100,7 +104,7 @@ function ChatScreen({ navigation }) {
 
                 <View style={{ backgroundColor: colors.light, flex: 5, width: "100%" }}>
 
-                    <FlatList contentContainerStyle={{ backgroundColor: colors.light, padding: 20, width: "100%" }}
+                    <FlatList id="messages" contentContainerStyle={{ backgroundColor: colors.light, padding: 20, width: "100%" }}
                         data={messages}
                         renderItem={({ item }) => <Message isUser={item.isUser} message={item.message} />}
                     />
