@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { ImageBackground, Platform, KeyboardAvoidingView, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import { AutoScrollFlatList, ImageBackground, Platform, KeyboardAvoidingView, View, Image, Alert, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import { colors, styles } from '../Config/Styles';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { useState } from 'react';
 import { API_URL } from "@env"
-import { AutoScrollFlatList } from "react-native-autoscroll-flatlist";
 
 
 
