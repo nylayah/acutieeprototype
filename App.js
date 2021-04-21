@@ -10,6 +10,7 @@ import Settings from './App/screens/Settings';
 import EditAvatar from './App/screens/EditAvatar';
 import CreateAccountForm from './App/Components/CreateAccountForm';
 import LoginScreenForm from './App/Components/LoginScreenForm';
+import Q1 from './App/screens/Q1';
 import { API_URL } from "@env"
 
 
@@ -31,6 +32,7 @@ export default function App() {
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Edit Avatar" component={EditAvatar} />
+        <Stack.Screen name="Q1" component={Q1} />
       </Stack.Navigator>
     </NavigationContainer >);
 

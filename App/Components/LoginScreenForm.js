@@ -46,7 +46,7 @@ function LoginScreenForm({ navigation }) {
                     const response = requestLogin(values.username, values.password)
                         .then(function (response) {
                             if (response) {
-                                navigation.navigate("Chat")
+                                navigation.navigate("Q1")
                             }
                         })
                 }}
